@@ -42,8 +42,8 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <p class="hero-label">Network Solutions Provider</p>
-                <h1 class="hero-title">Our Plan is our Promise</h1>
-                <p class="hero-subtitle">Connecting you to everything that matters</p>
+                <h1 class="hero-title">Our Plan is our Promise.</h1>
+                <p class="hero-subtitle">Connecting you to everything that matters.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Get Started</a>
                     <a href="#services" class="btn btn-outline">Explore Services</a>
@@ -79,7 +79,7 @@
                 </div>
                 
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop" alt="Team Collaboration" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=2070&auto=format&fit=crop" alt="Telecom Tower Infrastructure" loading="lazy">
                 </div>
             </div>
 
@@ -292,7 +292,6 @@
                         </div>
                     </div>
                     
-                    <a href="#contact" class="btn btn-primary">Send Your Resume</a>
                 </div>
                 <div class="careers-image">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Team Meeting" loading="lazy">
@@ -312,16 +311,31 @@
                     
                     <div class="contact-details">
                         <div class="contact-item">
-                            <h4>Email</h4>
-                            <a href="mailto:info@skytelsolutions.com">info@skytelsolutions.com</a>
+                            <div class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:info@skytelsolutions.com">info@skytelsolutions.com</a>
+                            </div>
                         </div>
                         <div class="contact-item">
-                            <h4>Phone</h4>
-                            <a href="tel:+911234567890">+91 123 456 7890</a>
+                            <div class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <a href="tel:+911234567890">+91 123 456 7890</a>
+                            </div>
                         </div>
                         <div class="contact-item">
-                            <h4>Location</h4>
-                            <p>India - Nationwide Service</p>
+                            <div class="contact-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>India - Nationwide Service</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -330,16 +344,16 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone">
+                        <input type="tel" id="phone" name="phone" placeholder="+91 000 000 0000">
                     </div>
                     <div class="form-group">
                         <label for="service">Service Interest</label>
@@ -356,9 +370,20 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    <div class="form-submit-row">
+                        <div class="resume-upload" id="resumeUpload">
+                            <input type="file" id="resumeInput" name="resume" accept=".pdf,.png,.jpg,.jpeg,.gif,.webp,.svg" hidden>
+                            <div class="resume-upload-inner">
+                                <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/>
+                                </svg>
+                                <span class="resume-label" id="resumeLabel">Add Resume</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
                 </form>
             </div>
         </div>

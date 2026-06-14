@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initScrollEffects();
     initFormHandling();
+    initResumeUpload();
     initIntersectionObserver();
 });
 
@@ -12,24 +13,42 @@ function initNavigation() {
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
     
-    // Smooth scroll with offset
+    // Smooth scroll navigation with custom easing (750ms)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offset = 80;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    mobileToggle.classList.remove('active');
+            if (!target) return;
+
+            const offset = 80;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 750;
+            let startTime = null;
+
+            function ease(t) {
+                return t < 0.5
+                    ? 4 * t * t * t
+                    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            }
+
+            function animation(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = ease(progress);
+                window.scrollTo(0, startPosition + distance * eased);
+                if (progress < 1) {
+                    requestAnimationFrame(animation);
                 }
+            }
+
+            requestAnimationFrame(animation);
+
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
             }
         });
     });
@@ -101,20 +120,25 @@ function initFormHandling() {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData);
-            
-            // Disable submit button
+            const resumeFile = document.getElementById('resumeInput').files[0];
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
-            
-            // Simulate API call (replace with actual endpoint)
+
             setTimeout(() => {
-                alert('Thank you for your message. We will get back to you soon.');
+                let msg = 'Thank you for your message. We will get back to you soon.';
+                if (resumeFile) {
+                    msg += '\n\nAttachment: ' + resumeFile.name;
+                }
+                alert(msg);
                 contactForm.reset();
+                document.getElementById('resumeLabel').textContent = 'Add Resume';
+                document.getElementById('resumeUpload').classList.remove('has-file');
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
             }, 1000);
@@ -122,30 +146,86 @@ function initFormHandling() {
     }
 }
 
-// Intersection Observer for fade-in animations
+// Intersection Observer for section animations
 function initIntersectionObserver() {
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                const children = entry.target.querySelectorAll('.fade-in');
+                children.forEach((child, i) => {
+                    setTimeout(() => {
+                        child.classList.add('visible');
+                    }, i * 60);
+                });
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
-    
-    // Observe elements
-    const animateElements = document.querySelectorAll(
-        '.about-block, .stat-item, .service-item, .project-item, .benefit-item, .contact-item'
-    );
-    
-    animateElements.forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
+
+    document.querySelectorAll('section').forEach(section => {
+        const targets = section.querySelectorAll(
+            '.about-block, .stat-item, .service-item, .project-item, .benefit-item, .contact-item, .contact-icon, .contact-text, .form-group, .resume-upload, .form-submit-row, .section-header, .projects-hero'
+        );
+        targets.forEach(el => el.classList.add('fade-in'));
+        observer.observe(section);
+    });
+}
+
+// Resume upload
+function initResumeUpload() {
+    const uploadZone = document.getElementById('resumeUpload');
+    const fileInput = document.getElementById('resumeInput');
+    const label = document.getElementById('resumeLabel');
+
+    if (!uploadZone || !fileInput || !label) return;
+
+    const ACCEPTED_TYPES = [
+        'application/pdf',
+        'image/png', 'image/jpeg', 'image/gif', 'image/webp', 'image/svg+xml'
+    ];
+
+    function handleFile(file) {
+        if (!file) return;
+        const isAccepted = ACCEPTED_TYPES.includes(file.type) ||
+            file.name.toLowerCase().endsWith('.pdf') ||
+            file.name.toLowerCase().match(/\.(png|jpe?g|gif|webp|svg)$/);
+        if (!isAccepted) {
+            label.textContent = 'PDF or image only';
+            uploadZone.classList.remove('has-file');
+            return;
+        }
+        label.textContent = file.name;
+        uploadZone.classList.add('has-file');
+    }
+
+    uploadZone.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', (e) => {
+        handleFile(e.target.files[0]);
+    });
+
+    uploadZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadZone.classList.add('drag-over');
+    });
+
+    uploadZone.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        uploadZone.classList.remove('drag-over');
+    });
+
+    uploadZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadZone.classList.remove('drag-over');
+        if (e.dataTransfer.files.length) {
+            fileInput.files = e.dataTransfer.files;
+            handleFile(e.dataTransfer.files[0]);
+        }
     });
 }
 
