@@ -1,14 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyTel Solutions - Professional Telecom Services</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -20,7 +25,7 @@
             <div class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
+                <a href="#services" class="nav-link">Capabilities</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#careers" class="nav-link">Careers</a>
                 <a href="#contact" class="nav-link nav-cta">Contact</a>
@@ -36,17 +41,23 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" alt="Network Infrastructure" loading="eager">
-            <div class="hero-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                alt="Network Infrastructure" loading="eager">
+            <div class="hero-overlay">
+                <div class="hero-pulse-ring"></div>
+                <div class="hero-pulse-ring"></div>
+                <div class="hero-pulse-ring"></div>
+            </div>
         </div>
         <div class="container hero-container">
             <div class="hero-content">
-                <p class="hero-label">Network Solutions Provider</p>
-                <h1 class="hero-title">Our Plan is our Promise.</h1>
-                <p class="hero-subtitle">Connecting you to everything that matters.</p>
+                <p class="hero-label">Strategic Partner for Mission-Critical Connectivity</p>
+                <h1 class="hero-title">Enterprise-Grade Infrastructure. Uncompromising Reliability.</h1>
+                <p class="hero-subtitle">We engineer secure, scalable telecom ecosystems that keep your operations
+                    online, your data protected, and your business moving forward.</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
-                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                    <a href="#contact" class="btn btn-primary">Talk to Our Team</a>
+                    <a href="#services" class="btn btn-outline">Explore Capabilities</a>
                 </div>
             </div>
         </div>
@@ -59,45 +70,53 @@
                 <span class="section-label">About Us</span>
                 <h2 class="section-title">Building the Future of Telecommunications</h2>
             </div>
-            
+
             <div class="about-grid">
                 <div class="about-content">
                     <div class="about-block">
                         <h3>Vision</h3>
-                        <p>To provide the best in class telecom training and services to develop a robust and secure state-of-the-art telecommunication network providing seamless coverage with special focus on rural and remote areas for bridging the digital divide and thereby facilitate socio-economic development.</p>
+                        <p>To be the benchmark for telecom excellence, delivering carrier-grade infrastructure, network
+                            resilience, and operational precision that empowers enterprises and communities to thrive in
+                            an always-connected world. We envision a future where connectivity is not a utility but a
+                            strategic advantage, built on security, scalability, and relentless innovation.</p>
                     </div>
-                    
+
                     <div class="about-block">
                         <h3>Mission</h3>
                         <ul class="mission-list">
-                            <li>Relentlessly focus on continuous improvement of the quality of services offered</li>
-                            <li>Enable people to deliver their best by providing opportunities for personal and professional development</li>
-                            <li>Help engineers acquire essential skills and knowledge</li>
-                            <li>Bridge gap between fresh telecom engineers and telecom companies</li>
+                            <li>Engineer mission-critical networks with 99.9%+ uptime through rigorous operational
+                                excellence and proactive network resilience strategies</li>
+                            <li>Partner with enterprises to architect scalable, future-ready infrastructure that
+                                accelerates digital transformation at every layer</li>
+                            <li>Uphold uncompromising security standards across all deployments, ensuring data integrity
+                                and regulatory compliance</li>
+                            <li>Cultivate a world-class engineering talent pool equipped to solve the most complex
+                                challenges in modern telecommunications</li>
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=2070&auto=format&fit=crop" alt="Telecom Tower Infrastructure" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=2070&auto=format&fit=crop"
+                        alt="Telecom Tower Infrastructure" loading="lazy">
                 </div>
             </div>
 
             <div class="stats-row">
                 <div class="stat-item">
-                    <div class="stat-number">99.9%</div>
+                    <div class="stat-number" data-target="99.9" data-suffix="%" data-decimals="1">0%</div>
                     <div class="stat-label">Network Uptime</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">24/7</div>
+                    <div class="stat-number" data-target="24" data-suffix="/7" data-decimals="0">0/7</div>
                     <div class="stat-label">Support</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">100+</div>
+                    <div class="stat-number" data-target="100" data-suffix="+" data-decimals="0">0+</div>
                     <div class="stat-label">Projects</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number" data-target="50" data-suffix="+" data-decimals="0">0+</div>
                     <div class="stat-label">Engineers</div>
                 </div>
             </div>
@@ -108,98 +127,124 @@
     <section id="services" class="services-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Services</span>
-                <h2 class="section-title">Comprehensive Telecom Solutions</h2>
+                <span class="section-label">Capabilities</span>
+                <h2 class="section-title">End-to-End Network Engineering &amp; Operations</h2>
             </div>
 
             <div class="services-grid">
                 <div class="service-item">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Drive Test" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop"
+                            alt="Drive Test" loading="lazy">
                     </div>
                     <div class="service-content">
-                        <h3>Drive Test & Optimization</h3>
-                        <p>Comprehensive drive testing and network optimization to ensure optimal end-user experience and operator profitability.</p>
-                        <ul>
-                            <li>Real-time data collection</li>
-                            <li>Coverage analysis</li>
-                            <li>Quality benchmarking</li>
-                        </ul>
+                        <h3>Drive Test &amp; Optimization</h3>
+                        <p><strong>The Challenge:</strong> Network operators face coverage gaps, dropped calls, and
+                            degraded data throughput that directly impact subscriber experience and churn rates.</p>
+                        <p><strong>Our Methodology:</strong> We deploy multi-technology drive test rigs with real-time
+                            KPI capture across 2G, 3G, 4G, and 5G layers. Our RF engineers correlate field data with
+                            OSS/BSS analytics to isolate root causes and prioritize optimization actions.</p>
+                        <p><strong>The Impact:</strong> Improved MOS scores, reduced dropped call rates by up to 40%,
+                            and increased data throughput — translating directly to higher ARPU and lower subscriber
+                            churn.</p>
                     </div>
                 </div>
 
                 <div class="service-item">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop" alt="RF Engineering" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop"
+                            alt="RF Engineering" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3>RF Engineering</h3>
-                        <p>Expert RF engineering services across multiple technologies including VoLTE, LTE, WCDMA, and GSM networks.</p>
-                        <ul>
-                            <li>VoLTE implementation</li>
-                            <li>LTE/5G planning</li>
-                            <li>Multi-vendor support</li>
-                        </ul>
+                        <p><strong>The Challenge:</strong> Multi-vendor, multi-technology RF environments create
+                            interference, handover failures, and capacity bottlenecks that degrade network performance.
+                        </p>
+                        <p><strong>Our Methodology:</strong> Our RF planning team uses advanced propagation modeling
+                            tools and spectrum analysis to design optimized cell layouts, tune antenna parameters, and
+                            manage interference across VoLTE, LTE, WCDMA, and GSM networks.</p>
+                        <p><strong>The Impact:</strong> Seamless mobility management, improved cell-edge throughput, and
+                            reduced inter-frequency handovers — ensuring consistent QoS for high-value enterprise and
+                            consumer subscribers.</p>
                     </div>
                 </div>
 
                 <div class="service-item">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Network Optimization" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                            alt="Network Optimization" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3>Network Optimization</h3>
-                        <p>Advanced algorithms and world-class tools for comprehensive network performance enhancement.</p>
-                        <ul>
-                            <li>Performance analysis</li>
-                            <li>Capacity planning</li>
-                            <li>Quality assurance</li>
-                        </ul>
+                        <p><strong>The Challenge:</strong> As subscriber density grows, networks experience congestion,
+                            latency spikes, and resource underutilization — leading to SLA breaches and revenue leakage.
+                        </p>
+                        <p><strong>Our Methodology:</strong> We apply a data-driven optimization framework combining
+                            PM/FM analytics, traffic profiling, and machine-learning-backed parameter tuning. Our
+                            approach covers capacity planning, load balancing, and feature activation across the entire
+                            RAN and core.</p>
+                        <p><strong>The Impact:</strong> Up to 30% improvement in resource utilization, reduced RRC setup
+                            failures, and extended network lifecycle — deferring capital expenditure while maintaining
+                            SLA compliance.</p>
                     </div>
                 </div>
 
                 <div class="service-item">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" alt="Microwave Transmission" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop"
+                            alt="Microwave Transmission" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3>Microwave Transmission</h3>
-                        <p>Reliable microwave transmission solutions for seamless connectivity and data transfer.</p>
-                        <ul>
-                            <li>Point-to-point links</li>
-                            <li>Backhaul solutions</li>
-                            <li>Link planning</li>
-                        </ul>
+                        <p><strong>The Challenge:</strong> Fiber backhaul is not always feasible in remote or
+                            geographically challenging terrain, creating connectivity dead zones for cell towers and
+                            enterprise sites.</p>
+                        <p><strong>Our Methodology:</strong> We design and deploy carrier-grade point-to-point and
+                            point-to-multipoint microwave links with adaptive modulation, space diversity, and automatic
+                            transmit power control. Every link is engineered to meet 99.999% availability targets.</p>
+                        <p><strong>The Impact:</strong> Ultra-reliable backhaul delivering multi-gigabit throughput with
+                            sub-5ms latency — enabling rapid tower deployment and enterprise connectivity where fiber
+                            cannot reach.</p>
                     </div>
                 </div>
 
                 <div class="service-item">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="WiMAX Solutions" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+                            alt="WiMAX Solutions" loading="lazy">
                     </div>
                     <div class="service-content">
-                        <h3>WiMAX & Broadband</h3>
-                        <p>Advanced WiMAX and broadband network implementation with quality service delivery.</p>
-                        <ul>
-                            <li>Network deployment</li>
-                            <li>Coverage optimization</li>
-                            <li>Performance monitoring</li>
-                        </ul>
+                        <h3>WiMAX &amp; Broadband</h3>
+                        <p><strong>The Challenge:</strong> Rural and semi-urban regions lack fixed broadband
+                            infrastructure, limiting digital inclusion and enterprise expansion into underserved
+                            markets.</p>
+                        <p><strong>Our Methodology:</strong> We architect end-to-end WiMAX and fixed wireless broadband
+                            networks — from spectrum planning and base station deployment to CPE installation and
+                            NOC-managed service delivery. Our deployments prioritize coverage density and subscriber
+                            scalability.</p>
+                        <p><strong>The Impact:</strong> High-speed broadband access delivered to previously unserved
+                            areas, enabling new revenue streams for ISPs and supporting government digital
+                            transformation mandates with measurable connectivity KPIs.</p>
                     </div>
                 </div>
 
                 <div class="service-item">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" alt="Telecom Training" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
+                            alt="Telecom Training" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3>Telecom Training</h3>
-                        <p>Professional development programs to bridge the gap between fresh engineers and industry requirements.</p>
-                        <ul>
-                            <li>Hands-on training</li>
-                            <li>Industry certification</li>
-                            <li>Career development</li>
-                        </ul>
+                        <p><strong>The Challenge:</strong> The telecom industry faces a widening skills gap — fresh
+                            engineers lack hands-on exposure to multi-vendor, multi-technology environments, slowing
+                            deployment velocity.</p>
+                        <p><strong>Our Methodology:</strong> We offer structured, industry-certified training programs
+                            covering RF planning, drive testing, optimization, and network management. Curricula are
+                            co-developed with operator partners and delivered through live equipment labs, not
+                            simulations.</p>
+                        <p><strong>The Impact:</strong> Job-ready engineers who reduce onboarding time by 50% and
+                            contribute to live projects from day one — strengthening your workforce pipeline and
+                            reducing dependency on external hiring.</p>
                     </div>
                 </div>
             </div>
@@ -209,7 +254,8 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="projects-hero">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Urban Infrastructure" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                alt="Urban Infrastructure" loading="lazy">
             <div class="projects-hero-overlay"></div>
         </div>
         <div class="container">
@@ -218,46 +264,80 @@
                 <h2 class="section-title">Delivering Excellence Across Networks</h2>
             </div>
 
-            <div class="projects-list">
-                <div class="project-item">
-                    <div class="project-meta">
-                        <span class="project-status completed">Completed</span>
-                        <span class="project-year">2025</span>
+            <div class="projects-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <span>2025</span>
+                        <span class="timeline-status completed">Completed</span>
                     </div>
-                    <h3>Urban LTE Rollout</h3>
-                    <p>Complete LTE network deployment across major metropolitan areas with seamless coverage and optimized performance.</p>
-                    <div class="project-tags">
-                        <span>LTE</span>
-                        <span>Urban</span>
-                        <span>VoLTE</span>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-meta">
-                        <span class="project-status completed">Completed</span>
-                        <span class="project-year">2025</span>
-                    </div>
-                    <h3>Rural Network Expansion</h3>
-                    <p>Bridging the digital divide with comprehensive network coverage in rural and remote areas.</p>
-                    <div class="project-tags">
-                        <span>GSM</span>
-                        <span>Rural</span>
-                        <span>4G</span>
+                    <div class="timeline-content">
+                        <h3>Urban LTE Rollout — 1,200+ BTS Sites</h3>
+                        <p>Complete LTE network deployment across major metropolitan areas. Achieved 98.5% population
+                            coverage with 100% uptime SLA compliance across all sites through multi-layer RF
+                            optimization and real-time KPI monitoring.</p>
+                        <div class="timeline-kpis">
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">1,200+</span><span
+                                    class="timeline-kpi-label">BTS Sites</span></div>
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">98.5%</span><span
+                                    class="timeline-kpi-label">Coverage</span></div>
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">100%</span><span
+                                    class="timeline-kpi-label">Uptime SLA</span></div>
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">45%</span><span
+                                    class="timeline-kpi-label">Throughput Gain</span></div>
+                        </div>
+                        <div class="timeline-tags">
+                            <span>LTE</span><span>VoLTE</span><span>Urban</span><span>Multi-Vendor</span></div>
                     </div>
                 </div>
 
-                <div class="project-item">
-                    <div class="project-meta">
-                        <span class="project-status ongoing">Ongoing</span>
-                        <span class="project-year">2026</span>
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <span>2025</span>
+                        <span class="timeline-status completed">Completed</span>
                     </div>
-                    <h3>5G Network Optimization</h3>
-                    <p>Next-generation network planning and optimization services for seamless 5G deployment.</p>
-                    <div class="project-tags">
-                        <span>5G</span>
-                        <span>Optimization</span>
-                        <span>Multi-vendor</span>
+                    <div class="timeline-content">
+                        <h3>Rural Network Expansion — Mountainous Terrain</h3>
+                        <p>Bridged the digital divide across 680+ rural villages in geographically challenging
+                            mountainous terrain. Achieved 100% uptime achievement in rural deployments through
+                            carrier-grade microwave backhaul and adaptive modulation links.</p>
+                        <div class="timeline-kpis">
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">680+</span><span
+                                    class="timeline-kpi-label">Villages</span></div>
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">95.2%</span><span
+                                    class="timeline-kpi-label">Pop. Coverage</span></div>
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">3.2M</span><span
+                                    class="timeline-kpi-label">Lives Impacted</span></div>
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">99.99%</span><span
+                                    class="timeline-kpi-label">Backhaul Uptime</span></div>
+                        </div>
+                        <div class="timeline-tags">
+                            <span>GSM</span><span>Rural</span><span>Microwave</span><span>4G</span></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item ongoing">
+                    <div class="timeline-year">
+                        <span>2026</span>
+                        <span class="timeline-status ongoing">Ongoing</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>5G Network Optimization — Handover Efficiency</h3>
+                        <p>Next-generation 5G deployment optimizing handover efficiency by 15% across multi-vendor
+                            environments. Targeting sub-1ms latency and 2Gbps+ peak throughput through ML-backed
+                            parameter tuning and RAN-core end-to-end optimization.</p>
+                        <div class="timeline-kpis">
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">15%</span><span
+                                    class="timeline-kpi-label">Handover Gain</span></div>
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">&lt;1ms</span><span
+                                    class="timeline-kpi-label">Latency</span></div>
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">2Gbps+</span><span
+                                    class="timeline-kpi-label">Peak Speed</span></div>
+                            <div class="timeline-kpi"><span class="timeline-kpi-value">3.5GHz</span><span
+                                    class="timeline-kpi-label">Mid-Band</span></div>
+                        </div>
+                        <div class="timeline-tags">
+                            <span>5G</span><span>Optimization</span><span>Multi-Vendor</span><span>ML-Powered</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -267,34 +347,71 @@
     <!-- Careers Section -->
     <section id="careers" class="careers-section">
         <div class="container">
-            <div class="careers-content">
-                <div class="careers-text">
-                    <span class="section-label">Careers</span>
-                    <h2 class="section-title">Join Our Team</h2>
-                    <p>We're committed to fostering talent and providing opportunities for personal and professional growth. Join a team of passionate engineers working on cutting-edge telecom technologies.</p>
-                    
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <h4>Career Growth</h4>
-                            <p>Continuous learning and advancement opportunities</p>
-                        </div>
-                        <div class="benefit-item">
-                            <h4>Collaborative Culture</h4>
-                            <p>Work with industry experts and innovators</p>
-                        </div>
-                        <div class="benefit-item">
-                            <h4>Competitive Benefits</h4>
-                            <p>Comprehensive compensation and perks</p>
-                        </div>
-                        <div class="benefit-item">
-                            <h4>Latest Technology</h4>
-                            <p>Work on cutting-edge telecom projects</p>
-                        </div>
-                    </div>
-                    
-                </div>
+            <div class="careers-top">
                 <div class="careers-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Team Meeting" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                        alt="Engineering Team" loading="lazy">
+                </div>
+                <div class="careers-intro">
+                    <div class="careers-text">
+                        <span class="section-label">Careers</span>
+                        <h2 class="section-title">Engineer the Future of Connectivity</h2>
+                        <p>We don't offer jobs — we offer challenges. Join a team of 50+ engineers solving the most complex
+                            problems in telecom: from 5G RAN optimization in dense urban cores to deploying carrier-grade
+                            microwave links in mountainous terrain. If you want your work to impact millions of connections,
+                            this is where you belong.</p>
+                    </div>
+                    <span class="careers-subtitle">Technologies You'll Work With</span>
+                    <div class="skill-tags">
+                        <span class="skill-tag">5G NR</span>
+                        <span class="skill-tag">LTE/4G</span>
+                        <span class="skill-tag">VoLTE</span>
+                        <span class="skill-tag">IoT</span>
+                        <span class="skill-tag">Private Networks</span>
+                        <span class="skill-tag">Microwave Transmission</span>
+                        <span class="skill-tag">RF Planning</span>
+                        <span class="skill-tag">Network Optimization</span>
+                        <span class="skill-tag">OSS/BSS</span>
+                        <span class="skill-tag">Drive Testing</span>
+                        <span class="skill-tag">Spectrum Analysis</span>
+                        <span class="skill-tag">ML/AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <span class="careers-subtitle">Why SkyTel</span>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+                        </svg> Real Engineering Challenges</h4>
+                    <p>Deploy networks in extreme terrain, optimize multi-vendor environments, and solve problems that
+                        directly impact national connectivity infrastructure.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg> Emerging Tech Exposure</h4>
+                    <p>Work hands-on with 5G, IoT, Private Networks, and ML-driven optimization — not in a lab, but on
+                        live national-scale deployments.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg> Professional Growth</h4>
+                    <p>Structured certification programs, operator co-developed curricula, and a clear path from
+                        engineer to technical lead on mission-critical projects.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                            <line x1="4" y1="22" x2="4" y2="15" />
+                        </svg> Measurable Impact</h4>
+                    <p>Your work directly impacts uptime, coverage, and throughput KPIs across networks serving millions
+                        of subscribers nationwide.</p>
                 </div>
             </div>
         </div>
@@ -308,11 +425,15 @@
                     <span class="section-label">Contact</span>
                     <h2 class="section-title">Let's Connect</h2>
                     <p>Get in touch for your telecom solutions</p>
-                    
+
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="M22 4L12 13 2 4" />
+                                </svg>
                             </div>
                             <div class="contact-text">
                                 <h4>Email</h4>
@@ -321,7 +442,11 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg>
                             </div>
                             <div class="contact-text">
                                 <h4>Phone</h4>
@@ -330,7 +455,11 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="true">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
                             </div>
                             <div class="contact-text">
                                 <h4>Location</h4>
@@ -340,44 +469,73 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required minlength="2" pattern="[A-Za-z\s]+">
+                            <span class="form-error" id="name-error">Please enter a valid name (letters only)</span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            <input type="email" id="email" name="email" placeholder="you@company.com" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                            <span class="form-error" id="email-error">Please enter a valid email (e.g., you@company.com)</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 000 000 0000" pattern="[\+]?[0-9\s\-]{10,12}">
+                            <span class="form-error" id="phone-error">Please enter a valid phone number (7-15 digits)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-method">Preferred Contact Method</label>
+                            <select id="contact-method" name="contact-method" required>
+                                <option value="">Select preferred method</option>
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
+                                <option value="video">Video Call</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="drive-test">Drive Test &amp; Optimization</option>
+                                <option value="rf-engineering">RF Engineering</option>
+                                <option value="network-optimization">Network Optimization</option>
+                                <option value="microwave">Microwave Transmission</option>
+                                <option value="wimax">WiMAX Solutions</option>
+                                <option value="training">Telecom Training</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Estimated Project Budget</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">Select budget range</option>
+                                <option value="under-50k">Under ₹50,000</option>
+                                <option value="50k-2l">₹50,000 – ₹2,00,000</option>
+                                <option value="2l-10l">₹2,00,000 – ₹10,00,000</option>
+                                <option value="10l-50l">₹10,00,000 – ₹50,00,000</option>
+                                <option value="above-50l">Above ₹50,00,000</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+91 000 000 0000">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Interest</label>
-                        <select id="service" name="service">
-                            <option value="">Select a service</option>
-                            <option value="drive-test">Drive Test & Optimization</option>
-                            <option value="rf-engineering">RF Engineering</option>
-                            <option value="network-optimization">Network Optimization</option>
-                            <option value="microwave">Microwave Transmission</option>
-                            <option value="wimax">WiMAX Solutions</option>
-                            <option value="training">Telecom Training</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                        <label for="message">Project Requirements</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Describe your project scope, timeline, and any specific technical requirements..." required minlength="10"></textarea>
+                        <span class="form-error" id="message-error">Please enter at least 10 characters</span>
                     </div>
                     <div class="form-submit-row">
                         <div class="resume-upload" id="resumeUpload">
-                            <input type="file" id="resumeInput" name="resume" accept=".pdf,.png,.jpg,.jpeg,.gif,.webp,.svg" hidden>
+                            <input type="file" id="resumeInput" name="resume" accept=".pdf,.doc,.docx" hidden>
                             <div class="resume-upload-inner">
-                                <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/>
+                                <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" />
                                 </svg>
                                 <span class="resume-label" id="resumeLabel">Add Resume</span>
                             </div>
@@ -385,51 +543,53 @@
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </div>
                 </form>
+                <div class="form-success" id="formSuccess">
+                    <h4>Thank you for your inquiry</h4>
+                    <p>A member of our engineering team will review your requirements within 24 business hours. <br> For urgent matters, call us directly at +91 123 456 7890.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="assets/skytel-logo.png" alt="SkyTel Logo" class="logo-image">
-                        <span>SkyTel Solutions</span>
-                    </div>
-                    <p>Professional telecom services for a connected world</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/skytel-logo.png" alt="SkyTel Logo" class="logo-image">
+                    <span>SkyTel Solutions</span>
                 </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="#about">About</a>
-                        <a href="#services">Services</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#careers">Careers</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <a href="#services">Drive Test</a>
-                        <a href="#services">RF Engineering</a>
-                        <a href="#services">Optimization</a>
-                        <a href="#services">Training</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                    </div>
+                <p>Strategic partner for mission-critical connectivity. Enterprise-grade telecom infrastructure,
+                    uncompromising reliability, and nationwide service across India.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#about">About</a>
+                    <a href="#services">Capabilities</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#careers">Careers</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Capabilities</h4>
+                    <a href="#services">Drive Test</a>
+                    <a href="#services">RF Engineering</a>
+                    <a href="#services">Optimization</a>
+                    <a href="#services">Training</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 SkyTel Solutions. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SkyTel Solutions. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
